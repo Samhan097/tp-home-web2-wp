@@ -1,0 +1,35 @@
+{
+    "name": "taxpod/tp-home-web2-wp",
+    "type": "project",
+    "require": {
+        "johnpbloch/wordpress": "^6.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true
+        }
+    },  
+    "repositories": [
+        {
+        "type": "composer",
+        "url": "https://wpackagist.org",
+        "only": [
+            "wpackagist-plugin/*",
+            "wpackagist-theme/*"
+        ]
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "wordpress/wp-content/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin"
+            ],
+        "wordpress/wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+        "wordpress/wp-content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        }
+    }
+}
