@@ -1,6 +1,12 @@
 # taxPOD Landing Page in Wordpress
 ## Concept of Site Architecture
-- Implemented [https://deliciousbrains.com/storing-wordpress-in-git](https://deliciousbrains.com/storing-wordpress-in-git)
+- Partially implemented [https://deliciousbrains.com/storing-wordpress-in-git](https://deliciousbrains.com/storing-wordpress-in-git)
+- Use composer to install wordpress
+- Use wordpress admin panel to install plugins
+- Use WPvivid Backup to sync plugins
+- Use import and export of .sql in phpmyadmin to sync database
+- Plugins must be installed by developer in local machine
+- Admin shall not install any plugins in live server
 
 ## Setup in Local Machine
 1. Clone the project
@@ -53,14 +59,10 @@
   1. Select "wpvivid-backuprestore.0.9.84.zip"
   1. Click "Install Now"
   1. Click "Activate Plugin"
-1. Download WPvivid Backup
-  1. Login live server.
-  1. Go to WPvivid Backup.
-  1. Download the latest backup file from live server.
-  1. (OR) Get the file from project leader.
 1. Upload backup
+  1. Get the latest backup file from project leader
   1. Go to WPvivid Backup > Upload > Select Files
-  1. Select all parts of the backup file
+  1. Select all files
   1. Click "Upload"
 1. Restore backup
   1. Go to WPvivid Backup > Backups
@@ -70,18 +72,21 @@
   1. Wait patiently
   1. Click "OK"
 1. Restore database
+  1. Get the latest .sql file from project leader
   1. Delete database tp-home-db
   1. Recreate database tp-home-db
-  1. Import tp-home-db.sql
-1. Update wp-config.php, add at the end of the file
-  1. > define( 'WP_HOME', 'http://taxpod2.wp' );
-define( 'WP_SITEURL', 'http://taxpod2.wp' );
-
-## Unresolved Issues
-- Will be forcefully redirect to https in admin panel
-define('FORCE_SSL_ADMIN', false);
-not working yet
-- still have some files in backup need to be deleted
+  1. Import tp-home-db.sql in setup folder/sql
+1. Configure wordpress
+  1. Copy content of wp-config-sample.php in setup folder, replace wp-config.php content 
+  1. You may update these parameters in wp-config.php if required
+    1. WP_HOME
+    1. WP_SITEURL
+    1. FORCE_SSL_ADMIN
+1. Update assets URL in database via Consultio
+  1. Login at http://taxpod2.wp/wp-login.php
+  1. Go to Consultio > Theme Options
+  1. Click "Save Changes"
+1. DONE
 
 ## Setup in Remote Server (INCOMPLETE)
 1. Modify git to not alter line end
