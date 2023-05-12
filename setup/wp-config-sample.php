@@ -85,6 +85,7 @@ define( 'WP_DEBUG', false );
 define( 'WP_HOME', 'http://taxpod2.wp' );
 define( 'WP_SITEURL', 'http://taxpod2.wp' );
 define('FORCE_SSL_ADMIN', false);
+define('FS_METHOD', 'direct');  //to add plugin without FTP credentials
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
@@ -94,8 +95,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
-
-/** [2023-05-05] By Edison Chow **/
-define( 'WP_HOME', 'https://wp2.taxpod.my' );
-define( 'WP_SITEURL', 'https://wp2.taxpod.my' );
-define('FS_METHOD', 'direct'); //to add plugin without FTP credentials

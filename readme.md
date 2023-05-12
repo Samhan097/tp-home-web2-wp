@@ -27,14 +27,14 @@
   - Select "Show all files"
   - Open file "httpd-vhosts"
   - Insert following code at the end of the file
-    - > <VirtualHost *:80>
+    - > \<VirtualHost *:80>
     DocumentRoot "C:/xampp/htdocs/tp-home-web2-wp/wordpress"
     ServerName taxpod2.wp
-        <Directory "C:/xampp/htdocs/tp-home-web2-wp/wordpress">
+        \<Directory "C:/xampp/htdocs/tp-home-web2-wp/wordpress">
             AllowOverride All
             Require all granted
-        </Directory>
-</VirtualHost> 
+        \</Directory>
+\</VirtualHost> 
   - Note: You have to restart XAMPP apache to see the changes
 1. Setup database
   1. Create database with name "tp-home-db"
@@ -89,7 +89,20 @@
 1. DONE
 
 ## Setup in Remote Server (INCOMPLETE)
-1. Modify git to not alter line end
-  1. > git config core.autocrlf false
-  1. > git config core.eol lf
-1. > sudo chown -R azureuser:www-data /var/www/tp-home-web1-wp
+1. Clone the project
+1. Run
+  1. > composer install
+1. Setup database
+  1. > mysql -u root -p
+  1. Enter password
+  1. > CREATE DATABASE `tp-home-db`;
+GRANT ALL PRIVILEGES ON `tp-home-db`.* TO 'taxpod'@'localhost';
+FLUSH PRIVILEGES;
+exit;
+1. Setup web server (apache2 or nginx)
+  1. Read any guide online
+1. Update Permission
+  1. > sudo chown -R azureuser:www-data /var/www/tp-home-web2-wp
+1. Setuo wordpress
+  1. Visit the website via browser
+  1. Continue setup wordpress
