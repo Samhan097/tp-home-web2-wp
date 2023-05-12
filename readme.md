@@ -106,3 +106,16 @@ exit;
 1. Setuo wordpress
   1. Visit the website via browser
   1. Continue setup wordpress
+1. Edit wordpress/wp-config.php
+  1. define( 'WP_HOME', 'https://www.taxpod.my' );
+  1. define( 'WP_SITEURL', 'https://www.taxpod.my' );
+  1. define('FS_METHOD', 'direct');
+1. Install WPvivid plugin
+  1. Follow "Setup in Local Machine"
+1. Upload backup
+  1. Follow "Setup in Local Machine"
+1. Install backup
+  1. Follow "Setup in Local Machine"
+1. Update assets URL in database via Consultio
+  1. Follow "Setup in Local Machine"
+1. DONE
